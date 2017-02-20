@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5FC557B-8B9F-4D02-825D-5AF64541BB5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SInP</RootNamespace>
+    <AssemblyName>SInP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PublishUrl>\\192.168.17.8\GESTAO_DE_ESTOQUE%24\SInP - Sistema Indicador de Performance\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>841182F7F2DB165A44FF3DF050242C678352ED27</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SInP_ChaveTemporária.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1467433283_OFFice-87.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>chave2.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CircularProgressBar.2.2.0.0\lib\net35-Client\CircularProgressBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EngineIoClientDotNet, Version=0.9.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EngineIoClientDotNet.0.9.22\lib\net45\EngineIoClientDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GithubSharp.Core, Version=1.0.4289.25885, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\GithubSharp.Core.0.0.5.1\lib\GithubSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.CacheProviders.ApplicationCacher, Version=1.0.4289.25886, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.CacheProviders.ApplicationCacher.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.CacheProviders.WebCache, Version=1.0.4289.25886, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.CacheProviders.WebCache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GithubSharp.Plugins.LogProviders.SimpleLogProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\GithubSharp.Plugins.All.0.0.5.1\lib\GithubSharp.Plugins.LogProviders.SimpleLogProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net-loggly, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\log4net-loggly.7.2.3\lib\net40\log4net-loggly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSAPConnector, Version=1.0.2.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>packages\NSAPConnector_x86.1.0.2\lib\NSAPConnector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="sapnco, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+      <HintPath>packages\NSAPConnector_x86.1.0.2\lib\sapnco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+      <HintPath>packages\NSAPConnector_x86.1.0.2\lib\sapnco_utils.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SocketIoClientDotNet, Version=0.9.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SocketIoClientDotNet.0.9.13\lib\net45\SocketIoClientDotNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.104.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Core.1.0.104.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="VSLangProj80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WebSocket4Net, Version=0.14.1.0, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocket4Net.0.14.1\lib\net45\WebSocket4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WinFormAnimation, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WinFormAnimation.1.3.0.0\lib\net35-Client\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\Conexao.cs" />
+    <Compile Include="Class\FB.cs" />
+    <Compile Include="frmConfiguracaoInventarioGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguracaoInventarioGeral.Designer.cs">
+      <DependentUpon>frmConfiguracaoInventarioGeral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventarioPainel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventarioPainel.Designer.cs">
+      <DependentUpon>frmInventarioPainel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProdutividadeContagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProdutividadeContagem.Designer.cs">
+      <DependentUpon>frmProdutividadeContagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Func.cs" />
+    <Compile Include="Gestao_Estoque\frmFaturamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmFaturamento.Designer.cs">
+      <DependentUpon>frmFaturamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmImportarEstoqueFisico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmImportarEstoqueFisico.Designer.cs">
+      <DependentUpon>frmImportarEstoqueFisico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmImportarInventarioGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmImportarInventarioGeral.Designer.cs">
+      <DependentUpon>frmImportarInventarioGeral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmIndicadorDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmIndicadorDiario.Designer.cs">
+      <DependentUpon>frmIndicadorDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmImportarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmImportarInventario.Designer.cs">
+      <DependentUpon>frmImportarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmIndicadoresMensal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmIndicadoresMensal.Designer.cs">
+      <DependentUpon>frmIndicadoresMensal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmInvRotativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmInvRotativo.Designer.cs">
+      <DependentUpon>frmInvRotativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmImportarPosicoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmImportarPosicoes.Designer.cs">
+      <DependentUpon>frmImportarPosicoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmLancAvaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmLancAvaria.Designer.cs">
+      <DependentUpon>frmLancAvaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\Racional\frmRacionalRupturaMensal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\Racional\frmRacionalRupturaMensal.Designer.cs">
+      <DependentUpon>frmRacionalRupturaMensal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmRupturaPK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestao_Estoque\frmRupturaPK.Designer.cs">
+      <DependentUpon>frmRupturaPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmConfiguracaoInventarioGeral.resx">
+      <DependentUpon>frmConfiguracaoInventarioGeral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventarioPainel.resx">
+      <DependentUpon>frmInventarioPainel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProdutividadeContagem.resx">
+      <DependentUpon>frmProdutividadeContagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmFaturamento.resx">
+      <DependentUpon>frmFaturamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmImportarEstoqueFisico.resx">
+      <DependentUpon>frmImportarEstoqueFisico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmImportarInventarioGeral.resx">
+      <DependentUpon>frmImportarInventarioGeral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmIndicadorDiario.resx">
+      <DependentUpon>frmIndicadorDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmImportarInventario.resx">
+      <DependentUpon>frmImportarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmIndicadoresMensal.resx">
+      <DependentUpon>frmIndicadoresMensal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmInvRotativo.resx">
+      <DependentUpon>frmInvRotativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmImportarPosicoes.resx">
+      <DependentUpon>frmImportarPosicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmLancAvaria.resx">
+      <DependentUpon>frmLancAvaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\Racional\frmRacionalRupturaMensal.resx">
+      <DependentUpon>frmRacionalRupturaMensal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Estoque\frmRupturaPK.resx">
+      <DependentUpon>frmRupturaPK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="chave.snk" />
+    <None Include="chave2.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SInP_ChaveTemporária.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000205-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1460867532_file-excel-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1460868387_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1460868521_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1460869027_vector_66_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1461131551_view-refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.VisualStudio.Debugger.InteropA">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.ProjectAggregator">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop.8.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1467433283_OFFice-87.ico" />
+    <None Include="Resources\indicadores-desempenho.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.104.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,25 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SInP.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="strCon" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="\\192.168.17.8\GESTAO_DE_ESTOQUE$\SInP - Sistema Indicador de Performance\bd.accdb"&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="\\192.168.17.8\GESTAO_DE_ESTOQUE$\SInP - Sistema Indicador de Performance\bd.accdb"</Value>
+    </Setting>
+    <Setting Name="strCon2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="D:\Projetos\Visual Studio\SInP\bd.accdb"&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="D:\Projetos\Visual Studio\SInP\bd.accdb"</Value>
+    </Setting>
+    <Setting Name="sqlEANxPosicaoMensal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SELECT EXPR1, EXPR2 FROM (SELECT Mid(DAT_CONT,5,2) AS Expr1, Round(Avg(ACUR)*100,2) AS Expr2 FROM (SELECT DAT_CONT, DOC_INV1, POS_DEP, IIf(COUNT(PRODUTO) &gt; 1, 0, 1) AS ACUR FROM (SELECT INVENTARIO.DAT_CONT, INVENTARIO.DOC_INV1, INVENTARIO.POS_DEP, INVENTARIO.PRODUTO FROM INVENTARIO left JOIN POSICAO ON INVENTARIO.POS_DEP = POSICAO.POSICAO WHERE POSICAO.TIPO_DEP not in ( 1003, 7001, 7004)  and INVENTARIO.PRODUTO &lt;&gt; '' GROUP BY INVENTARIO.DOC_INV1, INVENTARIO.POS_DEP, INVENTARIO.PRODUTO, INVENTARIO.DAT_CONT) GROUP BY DOC_INV1, POS_DEP, DAT_CONT) GROUP BY Mid(DAT_CONT, 5, 2))</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
